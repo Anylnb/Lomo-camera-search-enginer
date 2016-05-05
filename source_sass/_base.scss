@@ -7,6 +7,8 @@ h1{
 	margin-bottom:20px;
 	padding:40px;
 	padding-bottom:10px;
+	background-color:blue;
+	background: url("/data/background.jpg");
 }
 .rows{
 
@@ -92,12 +94,23 @@ h1{
 	text-align:center;
 	font-weight: bold;
 	.galleryimg{
-		padding:50px;
+		border:2px;
+		padding:15px;
+		margin:15px;
 		width: 200px;
-		height: 300px;
+		height: 100px;
 	}
 	.galleryimg:hover{
 		opacity:0.8;
-		width: 220px;
+		//width: 220px;
 	}
+}
+.select{
+	width:100%;
+}
+.choice{
+	display:inline-block;
+}
+.blank{
+	background: url("/data/background.jpg");
 }

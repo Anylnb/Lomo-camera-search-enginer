@@ -10,27 +10,59 @@
 				<a class="secondary button" ng-click="setorder('rank')">Rank</a>
 				<a class="secondary button" ng-click="setorder('title')">Title</a>
 				<a class="secondary button" ng-click="setorder('imdbRating')">Rating</a>
-			-->
+
 				<a class="secondary button" ng-click="order='rank'">Rank</a>
 				<a class="secondary button" ng-click="order='title'">Title</a>
-				<a class="secondary button" ng-click="order='-imdbRating'">Rating</a>
+				<a class="secondary button" ng-click="order='-imdbRating'">Rating</a>-->
 			</div>
-			<div>
+			<!--<div>
 				<a class="warning button tiny button" ng-click="change(0)">ascending</a>
 				<a class="warning button tiny button" ng-click="change(1)">descending</a>
+			</div>-->
+			<div class="choice">
+				Color:
+				<select ng-model="choosecolor">
+					<option value = "white">white</option>
+					<option value = "black">black</option>
+					<option value = "orange">orange</option>
+					<option value = "Multicolored">Multicolored</option>
+				</select>
 			</div>
+			<div class="choice">
+				Genre:
+				<select ng-model="choosegenre">
+					<option value = "lomo instant">lomo instant</option>
+					<option value = "lomo instant wide">lomo instant wide</option>
+					<option value = "horizon">horizon</option>
+					<option value = "belair">belair</option>
+				</select>
+			</div>
+			<div class="choice">
+				Material:
+				<select ng-model="choosemat">
+					<option value = "Plastic">Plastic</option>
+					<option value = "Steel">Steel</option>
+					<option value = "Leather">Leather</option>
+					<option value = "Hardpaper">Hardpaper</option>
+				</select>
+			</div>
+
+
+
 			<div class="blank">
-				<input class="input" type="text" ng-model="search">
-				<div class="columns large-2 medium-4 small-12" ng-repeat="movie in alldata | filter:search |orderBy: order">
+			<!--	<input class="input" type="text" ng-model="search">-->
+			<!--	<div class="columns large-2 medium-4 small-12" ng-repeat="camera in alldata | filter:search |orderBy: order">-->
+				<div class="columns large-2 medium-4 small-12" ng-repeat="camera in alldata| filter:{Color:choosecolor, genre:choosegenre, Material:choosemat}">
 					<div class="img">
-						<a href="#/details/{{movie.rank}}">
-						<img ng-src="data/images/{{movie.imdbID}}.jpg">
+						<a href="#/details/{{camera.ID}}">
+						<img ng-src="data/cameras/{{camera.ID}}.jpg">
 						</a>
 						<div  class ="pp">
-							{{ movie.title}}
+							{{ camera.name}}
+							{{camera.color}}
 						</div>
 						<div  class ="pp">
-							Rank: {{ movie.rank }}
+							Price: {{ camera.price }}
 						</div>
 					</div>
 				</div>	

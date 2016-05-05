@@ -3,7 +3,7 @@
 app.controller('demoController',['$scope','$http', function($scope, $http){
 		$scope.setgene = "";
 		$scope.order = "rank";
-		$http.get('data/imdb250.json').success(function(data){
+		$http.get('data/camera.json').success(function(data){
 			$scope.alldata = data;
 			console.log(data);
 
@@ -15,9 +15,11 @@ app.controller('demoController',['$scope','$http', function($scope, $http){
 app.controller('demoTwoController',['$scope','$http', function($scope, $http){
 	$scope.myName = "xi";
 	$scope.search = "Search for Movies";
-	$scope.order = "rank";
+	$scope.choosecolor = "";
+	$scope.choosegenre = "";
+	$scope.choosemat = "";
 	//$scope.movies = [];
-	$http.get('data/imdb250.json').success(function(data){
+	$http.get('data/camera.json').success(function(data){
 		$scope.alldata = data;
 		console.log($scope.alldata);
 
